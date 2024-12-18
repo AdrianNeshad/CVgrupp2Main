@@ -7,3 +7,4 @@ namespace CVgrupp2Main.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+//
