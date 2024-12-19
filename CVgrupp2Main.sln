@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVgrupp2Main", "CVgrupp2Main.csproj", "{6D73C32D-A1EC-4E20-801E-B20085BA8D2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databas", "..\Databas\Databas.csproj", "{A2A074E9-DDA4-4FB1-AFAD-4B5E4E369A70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
