@@ -2,7 +2,6 @@
 {
     public class Kontaktuppgifter
     {
-        [Key]
         public int KontaktID { get; set; }
         public string Telefonnummer { get; set; }
         public string Adress { get; set; }

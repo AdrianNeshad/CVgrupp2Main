@@ -1,7 +1,27 @@
+using CVgrupp2Main.DatabasLager;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using CVgrupp2Main.Models;
+using CVgrupp2Main.DatabasLager;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DataContext>(options =>
+    options
+        .UseLazyLoadingProxies()
+        .UseSqlServer(builder.Configuration.GetConnectionString("DataContext"),
+            sqlServerOptionsAction: sqlOptions =>
+            {
+                sqlOptions.MigrationsAssembly("CVgrupp2"); // Ange MigrationsAssembly här
+            }));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<DataContext>();
+
+builder.Services.AddScoped<MeddelandeViewModel>();
+
 
 var app = builder.Build();
 
