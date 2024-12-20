@@ -14,7 +14,7 @@ builder.Services.AddDbContext<DataContext>(options =>
         .UseSqlServer(builder.Configuration.GetConnectionString("DataContext"),
             sqlServerOptionsAction: sqlOptions =>
             {
-                sqlOptions.MigrationsAssembly("CVgrupp2"); // Ange MigrationsAssembly här
+                sqlOptions.MigrationsAssembly("CVgrupp2Main"); // Ange MigrationsAssembly här
             }));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
