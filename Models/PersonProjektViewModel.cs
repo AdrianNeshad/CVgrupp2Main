@@ -4,9 +4,8 @@ namespace CVgrupp2Main.Models
 {
     public class PersonProjektViewModel
     {
-        public List<Person> person { get; set; }
-        public List<Projekt> projekts { get; set; }
-        public List<PersonProjekt> projekt { get; set; }
-        //hej
+        public List<Person> Person { get; set; }
+        public List<Projekt> Projekt { get; set; }
+        public List<PersonProjekt> PersonProjekt { get; set; }
     }
 }
