@@ -14,9 +14,9 @@ namespace CVgrupp2Main.DatabasLager
         public bool Privat { get; set; }
 
         public byte[]? ProfilBild { get; set; }
-        public int kontaktID { get; set; }
+        public int KontaktID { get; set; }
 
-        [ForeignKey(nameof(kontaktID))]
+        [ForeignKey(nameof(KontaktID))]
         public virtual Kontaktuppgifter Kontaktuppgifter { get; set; }
         public virtual IEnumerable<PersonErfarenheter> HarErfarenhet { get; set; } = new List<PersonErfarenheter>();
         public virtual IEnumerable<PersonKompetenser> HarKompetens { get; set; } = new List<PersonKompetenser>();
