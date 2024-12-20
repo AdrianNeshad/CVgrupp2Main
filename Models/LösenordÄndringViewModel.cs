@@ -6,16 +6,16 @@ namespace CVgrupp2Main.Models
     {
         [Required(ErrorMessage = "Skriv in ditt nya lösenord.")]
         [DataType(DataType.Password)]
-        public string gammaltLösenord { get; set; }
+        public string GammaltLösenord { get; set; }
 
         [Required(ErrorMessage = "Skriv in ditt nya lösenord.")]
         [DataType(DataType.Password)]
         [Compare("bekräftaNyttLösenord")]
-        public string nyttLösenord { get; set; }
+        public string NyttLösenord { get; set; }
 
         [Required(ErrorMessage = "Bekräfta ditt nya lösenord")]
         [DataType(DataType.Password)]
         [Compare("bekräftaNyttLösenord")]
-        public string bekräftaNyttLösenord { get; set; }
+        public string BekräftaNyttLösenord { get; set; }
     }
 }
