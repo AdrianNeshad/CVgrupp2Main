@@ -7,10 +7,10 @@ namespace CVgrupp2Main.Models
     {
         public int ProjektID { get; set; }
 
-        [Required(ErrorMessage = "Vänligen skriv ett namn.")]
+        [Required(ErrorMessage = "Vänligen skriv ett projektnamn.")]
         public string Namn {  get; set; }
 
-        [Required(ErrorMessage = "Vänligen fyll i en beskrivning.")]
+        [Required(ErrorMessage = "Vänligen fyll i en projektbeskrivning.")]
         public string Beskrivning { get; set; }
 
     }
