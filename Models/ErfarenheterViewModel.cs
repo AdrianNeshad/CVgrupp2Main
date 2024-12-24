@@ -6,12 +6,12 @@ namespace CVgrupp2Main.Models
     {
 
         [Required(ErrorMessage = "PersonID måste anges")]
-        public required string ID { get; set; }
+        public string ID { get; set; }
 
         [Required(ErrorMessage = "Erfarenhetens titel måste anges")]
-        public required string Titel { get; set; }
+        public string Titel { get; set; }
 
         [Required(ErrorMessage = "Erfarenhetsbeskrivning måste anges")]
-        public required string Beskrivning { get; set; }
+        public string Beskrivning { get; set; }
     }
 }
