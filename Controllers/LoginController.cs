@@ -9,7 +9,7 @@ namespace CVgrupp2Main.Controllers
     {
         // Visar inloggningsformuläret.
         [HttpGet]
-        public IActionResult LogIn()
+        public IActionResult LoggaIn()
         {
             var loginViewModel = new LoginViewModel();
             // Räknar och visar antalet olästa meddelanden för användaren.
@@ -19,7 +19,7 @@ namespace CVgrupp2Main.Controllers
         }
         // Hanterar inloggningen baserat på de uppgifter användaren skickar in.
         [HttpPost]
-        public async Task<IActionResult> LogIn(LoginViewModel loginViewModel)
+        public async Task<IActionResult> LoggaIn(LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid) // Kontrollerar om formuläret är korrekt ifyllt.
             {
@@ -49,7 +49,7 @@ namespace CVgrupp2Main.Controllers
         // Hanterar utloggningen.
 
         [HttpPost]
-        public async Task<IActionResult> LogOut()
+        public async Task<IActionResult> LoggaUt()
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
