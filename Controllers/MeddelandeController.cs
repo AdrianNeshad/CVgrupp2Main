@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CVgrupp2Main.Controllers
 {
-    public class MeddelandeController(MeddelandeViewModel model, DataContext data) : Controller
+    public class MeddelandeController(DataContext data) : Controller
     {
 
         // Visar formuläret för att skapa ett nytt meddelande
@@ -58,7 +58,7 @@ namespace CVgrupp2Main.Controllers
             // Skapa och spara det nya meddelandet i databasen
             if (ModelState.IsValid)
             {
-                Meddelande meddelande = new Meddelande();
+                Meddelande meddelande = new();
                 meddelande.Innehåll = meddelandeView.Meddelande;
                 data.Meddelande.Add(meddelande);
                 data.SaveChanges();
