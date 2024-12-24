@@ -85,7 +85,7 @@ namespace CVgrupp2Main.DatabasLager
                     Efternamn = "B",
                     Lösenord = "Abc123",
                     Privat = false,
-                    kontaktID = 1,
+                    KontaktID = 1,
 
                 }
             );

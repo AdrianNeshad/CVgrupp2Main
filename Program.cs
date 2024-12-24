@@ -2,7 +2,6 @@ using CVgrupp2Main.DatabasLager;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CVgrupp2Main.Models;
-using CVgrupp2Main.DatabasLager;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +34,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+    
 app.UseRouting();
 
 app.UseAuthorization();
