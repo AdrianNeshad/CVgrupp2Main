@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CVgrupp2Main.Controllers
-{
+{   
     public class CVController(DataContext data) : Controller
     {
         //privata sidan för användarens CV.
