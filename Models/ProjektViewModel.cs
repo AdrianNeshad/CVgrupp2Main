@@ -8,10 +8,10 @@ namespace CVgrupp2Main.Models
         public int ProjektID { get; set; }
 
         [Required(ErrorMessage = "Vänligen skriv ett projektnamn.")]
-        public string Namn {  get; set; }
+        public required string Namn {  get; set; }
 
         [Required(ErrorMessage = "Vänligen fyll i en projektbeskrivning.")]
-        public string Beskrivning { get; set; }
+        public required string Beskrivning { get; set; }
 
     }
 }

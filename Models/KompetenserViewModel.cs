@@ -8,10 +8,10 @@ namespace CVgrupp2Main.Models
 
         [Required(ErrorMessage = "Fyll i kompetenstitel")]
         [StringLength(50, ErrorMessage = "Kompetenstitel får vara max 50 karaktärer")]
-        public string Titel { get; set; }
+        public required string Titel { get; set; }
 
         [Required(ErrorMessage = "Fyll i kompetensbeskrivning")]
         [StringLength(300, ErrorMessage = "Kompetensbeskrivning får vara max 300 karaktärer")]
-        public string Beskrivning { get; set; }
+        public required string Beskrivning { get; set; }
     }
 }

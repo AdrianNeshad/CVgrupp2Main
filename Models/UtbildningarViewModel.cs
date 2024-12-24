@@ -4,12 +4,12 @@ namespace CVgrupp2Main.Models
 {
     public class UtbildningarViewModel
     {
-        public string PersonID { get; set; } // Lägg till Personid
+        public string PersonID { get; set; }
 
         [Required(ErrorMessage = "Utbildningens namn måste anges")]
-        public string Namn { get; set; }
+        public required string Namn { get; set; }
 
         [Required(ErrorMessage = "Utbildningens beskrivning måste anges")]
-        public string Beskrivning { get; set; }
+        public required string Beskrivning { get; set; }
     }
 }
