@@ -7,9 +7,9 @@ namespace CVgrupp2Main.Models
         public string PersonID { get; set; }
 
         [Required(ErrorMessage = "Utbildningens namn måste anges")]
-        public required string Namn { get; set; }
+        public string Namn { get; set; }
 
         [Required(ErrorMessage = "Utbildningens beskrivning måste anges")]
-        public required string Beskrivning { get; set; }
+        public string Beskrivning { get; set; }
     }
 }
