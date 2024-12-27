@@ -51,7 +51,7 @@ namespace CVgrupp2Main.Controllers
             data.SaveChanges();
 
 
-            return RedirectToAction("Projekt");
+            return RedirectToAction("VisaProjekt");
         }
         //för att gå ur projekt
         public IActionResult LämnaProjekt(int project)
@@ -69,7 +69,7 @@ namespace CVgrupp2Main.Controllers
             data.PersonProjekt.Remove(profiliP);
             data.SaveChanges();
 
-            return RedirectToAction("Projekt");
+            return RedirectToAction("VisaProjekt");
         }
         //startar nytt projekt formuläret
         [HttpGet]
@@ -96,7 +96,7 @@ namespace CVgrupp2Main.Controllers
                 // Lägger till användaren som skapade projektet i projektet
                 AnslutTillProjekt(projekt.ProjektID);
 
-                return RedirectToAction("Projekt", "Projekt");
+                return RedirectToAction("VisaProjekt", "Projekt");
             }
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
             return View(viewModel);
@@ -144,7 +144,7 @@ namespace CVgrupp2Main.Controllers
             data.Update(theProject);
             data.SaveChanges();
 
-            return RedirectToAction("Projekt");
+            return RedirectToAction("VisaProjekt");
         }
 
         // Metod för att ta bort ett projekt
@@ -162,7 +162,7 @@ namespace CVgrupp2Main.Controllers
             data.SaveChanges();
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
 
-            return RedirectToAction("Projekt");
+            return RedirectToAction("VisaProjekt");
         }
     }
 }

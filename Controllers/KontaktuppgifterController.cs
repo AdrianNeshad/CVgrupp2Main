@@ -1,4 +1,4 @@
-﻿using CVgrupp2Main.DatabasLager;
+﻿    using CVgrupp2Main.DatabasLager;
 using CVgrupp2Main.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -59,12 +59,12 @@ namespace CVgrupp2Main.Controllers
                 data.SaveChanges();
 
                 // Återgår till användarens profilsida efter uppdatering.
-                return RedirectToAction("Profil", "Person");
+                return RedirectToAction("Profil", "Användare");
             }
             //kollar meddelanden,
             //Återvisar formuläret med eventuella felmeddelanden om valideringen misslyckas.
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
-            return View("~/Views/CV/RedigeraKontakt.cshtml", viewModel);
+            return View("~/Views/CV/ÄndraKontaktuppgifter.cshtml", viewModel);
         }
     }
 }

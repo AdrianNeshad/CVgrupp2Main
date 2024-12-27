@@ -1,6 +1,7 @@
 ﻿using CVgrupp2Main.DatabasLager;
 using CVgrupp2Main.Models;
 using Microsoft.AspNetCore.Mvc;
+
 namespace CVgrupp2Main.Controllers
 {
     public class ErfarenheterController(DataContext data) : Controller

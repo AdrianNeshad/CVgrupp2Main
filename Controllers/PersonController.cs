@@ -93,7 +93,7 @@ namespace CVgrupp2Main.Controllers
                 }
             }
 
-            return RedirectToAction("Profil", "Person");
+            return RedirectToAction("Profil", "Användare");
         }
         // Visar en vy med användarens profilbild.
 
@@ -151,7 +151,7 @@ namespace CVgrupp2Main.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Profil", "Person");
+            return RedirectToAction("Profil", "Användare");
         }
         // Hanterar ändring av kontots privatstatus.
 
@@ -171,7 +171,7 @@ namespace CVgrupp2Main.Controllers
             }
 
             // Återgå till användarens profil sida eller annan relevant vy
-            return RedirectToAction("Profil", "Person");
+            return RedirectToAction("Profil", "Användare");
         }
     }
 }

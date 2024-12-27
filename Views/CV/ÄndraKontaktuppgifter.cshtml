@@ -1,0 +1,41 @@
+﻿@model KontaktuppgifterViewModel
+@{
+	ViewBag.Title = "Ändra Kontaktuppgifter";
+}
+
+<form asp-action="ÄndraKontaktuppgifter" method="post">
+    <h2>@ViewBag.Title</h2>
+    <input type="hidden" asp-for="KontaktID" />
+
+    <div class="form-group">
+        <label asp-for="Förnamn">Förnamn</label>
+        <input asp-for="Förnamn" class="form-control" />
+        <span asp-validation-for="Förnamn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Efternamn">Efternamn</label>
+        <input asp-for="Efternamn" class="form-control" />
+        <span asp-validation-for="Efternamn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Adress">Adress</label>
+        <input asp-for="Adress" class="form-control" />
+        <span asp-validation-for="Adress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefonnummer">Telefonnummer</label>
+        <input asp-for="Telefonnummer" class="form-control" />
+        <span asp-validation-for="Telefonnummer" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">E-post</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Spara</button>
+</form>
