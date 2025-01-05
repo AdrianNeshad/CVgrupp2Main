@@ -21,7 +21,7 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Sökning" asp-action="Sökning">
+                            <a class="nav-link text-dark" asp-controller="Sok" asp-action="Sökning">
                                 <i class="bi bi-search"></i> Sök
                             </a>
                         </li>
@@ -45,7 +45,7 @@
 
 
                             <li class="nav-item profil">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Användare" asp-action="Profil">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="Profil">
                                     Profil
                                 </a>
                             </li>
@@ -57,10 +57,10 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoggaIn"> Logga in </a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="LoggaIn"> Logga in </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Användare" asp-action="LäggTillAnvändare"> Registrera ny användare </a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="LäggTillAnvändare"> Registrera ny användare </a>
                             </li>
                         }
 

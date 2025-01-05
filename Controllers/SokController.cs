@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CVgrupp2Main.Controllers
 {
-    public class SökController(DataContext data) : Controller
+    public class SokController(DataContext data) : Controller
     {
         public IActionResult Sökning()
         {
