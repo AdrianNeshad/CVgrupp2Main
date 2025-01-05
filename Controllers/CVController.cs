@@ -7,13 +7,13 @@ namespace CVgrupp2Main.Controllers
     public class CVController(DataContext data) : Controller
     {
         //privata sidan för användarens CV.
-        public IActionResult PrivatCVsida()
+        public IActionResult PrivatKonto()
         { // Räknar och visar antalet olästa meddelanden för användaren.
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
             return View();
         }
         // Visar ett CV för en specifik användare baserat på användarnamnet.
-        public IActionResult PublicCVsida(string användarnamn)
+        public IActionResult VisaCVsida(string användarnamn)
         {
             // Använder LINQ och Entity Framework för att hämta detaljerad information om en specifik person.
             // Inkluderar relaterad information som erfarenheter, kompetenser, projekt, etc.

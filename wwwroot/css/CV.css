@@ -1,0 +1,128 @@
+﻿body.bodyCV {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f7f8fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.CVInfo {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header.VälkomstInfo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    header.VälkomstInfo h1 {
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+.ProfilBild {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.no-profile-pic {
+    color: #777;
+    font-style: italic;
+}
+
+.cv-sektion {
+    margin-bottom: 20px;
+}
+
+    .cv-sektion h2 {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+        color: #007bff;
+    }
+
+.cv-item {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+    .cv-item p {
+        margin: 5px 0;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+
+/* Stil för header */
+.login-header {
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Mörk färg för bättre läsbarhet */
+    margin-bottom: 20px;
+}
+
+/* Stil för meddelande */
+.login-message, .register-message {
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #555; /* Ljusare färg för text */
+    margin-bottom: 10px;
+}
+
+/* Länkstil */
+.login-link, .register-link {
+    color: #0066cc; /* Blå för länkar */
+    text-decoration: none;
+}
+
+    .login-link:hover, .register-link:hover {
+        text-decoration: underline; /* Understrykning vid hover */
+    }
+
+/* För att ge knappar och länkar en fin hover-effekt */
+.login-link, .register-link {
+    transition: color 0.3s ease;
+}
+
+    .login-link:hover, .register-link:hover {
+        color: #004a99; /* Mörkare blå vid hover */
+    }

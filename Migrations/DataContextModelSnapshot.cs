@@ -108,7 +108,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Erfarenheter");
+                    b.ToTable("Erfarenheter", (string)null);
 
                     b.HasData(
                         new
@@ -137,7 +137,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Kompetenser");
+                    b.ToTable("Kompetenser", (string)null);
 
                     b.HasData(
                         new
@@ -167,7 +167,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasKey("KontaktID");
 
-                    b.ToTable("Kontaktuppgifter");
+                    b.ToTable("Kontaktuppgifter", (string)null);
 
                     b.HasData(
                         new
@@ -197,7 +197,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Meddelande");
+                    b.ToTable("Meddelande", (string)null);
 
                     b.HasData(
                         new
@@ -237,7 +237,7 @@ namespace CVgrupp2Main.Migrations
                     b.HasIndex("kontaktID")
                         .IsUnique();
 
-                    b.ToTable("Person");
+                    b.ToTable("Person", (string)null);
 
                     b.HasData(
                         new
@@ -263,7 +263,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("PersonID");
 
-                    b.ToTable("PersonErfarenheter");
+                    b.ToTable("PersonErfarenheter", (string)null);
 
                     b.HasData(
                         new
@@ -285,7 +285,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("PersonID");
 
-                    b.ToTable("PersonKompetenser");
+                    b.ToTable("PersonKompetenser", (string)null);
 
                     b.HasData(
                         new
@@ -307,7 +307,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("MeddelandeID");
 
-                    b.ToTable("PersonMottagitMeddelande");
+                    b.ToTable("PersonMottagitMeddelande", (string)null);
 
                     b.HasData(
                         new
@@ -333,7 +333,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("Medverkande");
 
-                    b.ToTable("PersonProjekt");
+                    b.ToTable("PersonProjekt", (string)null);
 
                     b.HasData(
                         new
@@ -355,7 +355,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("MeddelandeID");
 
-                    b.ToTable("PersonSkickatMeddelande");
+                    b.ToTable("PersonSkickatMeddelande", (string)null);
 
                     b.HasData(
                         new
@@ -377,7 +377,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("UtbildningID");
 
-                    b.ToTable("PersonUtbildningar");
+                    b.ToTable("PersonUtbildningar", (string)null);
 
                     b.HasData(
                         new
@@ -411,7 +411,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasIndex("Skapare");
 
-                    b.ToTable("Projekt");
+                    b.ToTable("Projekt", (string)null);
 
                     b.HasData(
                         new
@@ -439,7 +439,7 @@ namespace CVgrupp2Main.Migrations
 
                     b.HasKey("UtbildningID");
 
-                    b.ToTable("Utbildningar");
+                    b.ToTable("Utbildningar", (string)null);
 
                     b.HasData(
                         new

@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model LösenordÄndringViewModel
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+
+<div class="login-container">
+    <form asp-controller="Person" asp-action="ÄndraLösenord" method="post" class="login-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="GammaltLösenord">Nuvarande lösenord:</label>
+            <input asp-for="GammaltLösenord" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NyttLösenord">Nytt lösenord:</label>
+            <input asp-for="NyttLösenord" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BekräftaNyttLösenord">Bekräfta nytt lösenord:</label>
+            <input asp-for="BekräftaNyttLösenord" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Ändra lösenord</button>
+        </div>
+    </form>
+</div>

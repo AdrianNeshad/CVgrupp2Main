@@ -1,0 +1,80 @@
+﻿@using CVgrupp2Main.DatabasLager
+@model Person
+
+<link rel="stylesheet" type="text/css" href="~/css/CV.css">
+
+<body class="bodyCV">
+    <div class="CVInfo">
+        <header class="VälkomstInfo">
+            <h1>Välkommen till CV-sidan för <span class="NamnCV">@Model.Användarnamn</span></h1>
+            @if (Model.ProfilBild != null && Model.ProfilBild.Length > 0)
+            {
+                <img src="data:image;base64,@(Convert.ToBase64String(Model.ProfilBild))" alt="Profilbild" class="ProfilBild" />
+            }
+            else
+            {
+                <p class="no-profile-pic">Profilbild saknas</p>
+            }
+        </header>
+
+        <section class="cv-sektion KontaktInformationCV">
+            <h2>Kontaktinformation</h2>
+            <p><strong>Förnamn:</strong> @Model.Förnamn</p>
+            <p><strong>Efternamn:</strong> @Model.Efternamn</p>
+            <p><strong>Adress:</strong> @Model.Kontaktuppgifter.Adress</p>
+            <p><strong>Telefonnummer:</strong> @Model.Kontaktuppgifter.Telefonnummer</p>
+            <p><strong>Email:</strong> @Model.Kontaktuppgifter.Email</p>
+        </section>
+
+        <section class="cv-sektion ErfarenheterCV">
+            <h2>Erfarenheter</h2>
+            @foreach (var erfarenhet in Model.HarErfarenhet)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @erfarenhet.Erfarenheter.Titel</p>
+                    <p><strong>Beskrivning:</strong> @erfarenhet.Erfarenheter.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <section class="cv-sektion KompetenserCV">
+            <h2>Kompetenser</h2>
+            @foreach (var kompetens in Model.HarKompetens)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @kompetens.Kompetenser.Titel</p>
+                    <p><strong>Beskrivning:</strong> @kompetens.Kompetenser.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <section class="cv-sektion UtbildningCV">
+            <h2>Utbildning</h2>
+            @foreach (var utbildning in Model.HarUtbildning)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @utbildning.Utbildningar.Namn</p>
+                    <p><strong>Beskrivning:</strong> @utbildning.Utbildningar.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <section class="cv-sektion ProjektCV">
+            <h2>Projekt</h2>
+            @foreach (var projekt in Model.HarMedverkat)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @projekt.Projekt.Namn</p>
+                    <p><strong>Beskrivning:</strong> @projekt.Projekt.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        @if (Model.Användarnamn == User.Identity.Name)
+        {
+            <a asp-controller="Person" asp-action="ÄndraLösenord" class="btn btn-secondary">Ändra ditt lösenord</a>
+        }
+
+        <a asp-controller="Meddelande" asp-action="NyttMeddelande" class="btn btn-primary">Skapa ett nytt meddelande</a>
+    </div>
+</body>

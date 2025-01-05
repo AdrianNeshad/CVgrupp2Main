@@ -1,4 +1,4 @@
-﻿    using CVgrupp2Main.DatabasLager;
+﻿using CVgrupp2Main.DatabasLager;
 using CVgrupp2Main.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
