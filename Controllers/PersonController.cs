@@ -93,7 +93,7 @@ namespace CVgrupp2Main.Controllers
                 }
             }
 
-            return RedirectToAction("Profil", "Användare");
+            return RedirectToAction("Profil", "Person");
         }
         // Visar en vy med användarens profilbild.
 

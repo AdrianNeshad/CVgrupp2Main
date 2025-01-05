@@ -11,14 +11,14 @@
             {
                 <img src="data:image;base64,@(Convert.ToBase64String(Model.ProfilBild))" alt="Profilbild" class="ProfilBild" />
                 <p>
-                    <a asp-controller="Person" asp-action="LäggTillBild" class="redigera-knapp">Byt profilbild</a>
+                    <a asp-controller="Person" asp-action="LäggTillProfilbild" class="redigera-knapp">Byt profilbild</a>
                 </p>
             }
             else
             {
                 <p>Profilbild saknas</p>
                 <p>
-                    <a asp-controller="Person" asp-action="LäggTillBild" class="redigera-knapp">Lägg till profilbild</a>
+                    <a asp-controller="Person" asp-action="LäggTillProfilbild" class="redigera-knapp">Lägg till profilbild</a>
                 </p>
             }
         </header>
@@ -27,7 +27,7 @@
         <section class="cv-sektion KontaktInformationCV">
             <div class="rubrik-och-knapp">
                 <h2>Kontaktinformation</h2>
-                <a asp-controller="Kontakt" asp-action="RedigeraKontakt" class="redigera-knapp">Redigera</a>
+                <a asp-controller="Kontaktuppgifter" asp-action="ÄndraKontaktuppgifter" class="redigera-knapp">Redigera</a>
             </div>
             <p><strong>Förnamn:</strong> @Model.Förnamn</p>
             <p><strong>Efternamn:</strong> @Model.Efternamn</p>
