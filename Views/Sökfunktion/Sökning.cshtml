@@ -2,13 +2,13 @@
     ViewData["Title"] = "Sökning";
 }
 
-<link rel="stylesheet" type="text/css" href="~/css/Home.css">
+<link rel="stylesheet" type="text/css" href="~/css/Användare.css">
 
-<div class="hem-container">
-    <form asp-action="Sök" asp-controller="Sökning" class="login-form">
+<div class="login-container">
+    <form asp-action="Sök" asp-controller="Sok" class="login-form">
         <h2>@ViewData["Title"]</h2>
 
-        <div class="form-group">
+        <div class="form-group">    
             <input type="text" name="sok" class="form-control" placeholder="Användarnamn:" />
         </div>
 
