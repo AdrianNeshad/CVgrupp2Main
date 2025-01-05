@@ -40,7 +40,7 @@
         <section class="cv-sektion ErfarenheterCV">
             <div class="rubrik-och-knapp">
                 <h2>Erfarenheter</h2>
-                <form asp-controller="Erfarenhet" asp-action="RedigeraErfarenhet" method="get">
+                <form asp-controller="Erfarenheter" asp-action="ÄndraErfarenhet" method="get">
                     <button type="submit" class="redigera-knapp">Redigera</button>
                 </form>
             </div>
@@ -57,7 +57,7 @@
         <section class="cv-sektion KompetenserCV">
             <div class="rubrik-och-knapp">
                 <h2>Kompetenser</h2>
-                <form asp-controller="Kompetenser" asp-action="ViewKompetenser" method="get">
+                <form asp-controller="Kompetenser" asp-action="VisaKompetenser" method="get">
                     <button type="submit" class="redigera-knapp">Redigera</button>
                 </form>
             </div>
@@ -74,7 +74,7 @@
         <section class="cv-sektion UtbildningCV">
             <div class="rubrik-och-knapp">
                 <h2>Utbildning</h2>
-                <form asp-controller="Utbildning" asp-action="RedigeraUtbildning" method="get">
+                <form asp-controller="Utbildningar" asp-action="ÄndraUtbildning" method="get">
                     <button type="submit" class="redigera-knapp">Redigera</button>
                 </form>
             </div>
@@ -91,7 +91,7 @@
         <section class="cv-sektion ProjektCV">
             <div class="rubrik-och-knapp">
                 <h2>Projekt</h2>
-                <form asp-controller="Projekt" asp-action="ProjektStart" method="get">
+                <form asp-controller="Projekt" asp-action="VisaProjekt" method="get">
                     <button class="redigera-knapp" type="submit">Redigera</button>
                 </form>
             </div>
@@ -105,7 +105,7 @@
         </section>
 
         <!-- PrivatKonto -->
-        <form asp-controller="Person" asp-action="ÄndraKontoStatus" method="post">
+        <form asp-controller="Person" asp-action="ÄndraStatus" method="post">
             <label for="privatKonto">Privat konto</label>
             <input type="checkbox" name="privatKonto" id="privatKonto" value="true" @(Model.Privat ? "checked" : "") />
 
