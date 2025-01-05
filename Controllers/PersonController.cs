@@ -10,14 +10,14 @@ namespace CVgrupp2Main.Controllers
     public class PersonController(DataContext data, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager) : Controller
     {
         [HttpGet]
-        public IActionResult LäggTillPerson()
+        public IActionResult LäggTillAnvändare()
         {
             return View();
         }
         // Hanterar inlämningen av det nya personformuläret.
 
         [HttpPost]
-        public async Task<IActionResult> LäggTillPerson(PersonViewModel viewModel)
+        public async Task<IActionResult> LäggTillAnvändare(PersonViewModel viewModel)
         {
             if (ModelState.IsValid) // Kontrollerar om modellens data är giltig.
             {
@@ -64,7 +64,7 @@ namespace CVgrupp2Main.Controllers
         }
         // Visar formulär för att ladda upp en profilbild.
 
-        public IActionResult LäggTillBild()
+        public IActionResult LäggTillProfilbild()
         {
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
 
@@ -73,7 +73,7 @@ namespace CVgrupp2Main.Controllers
         // Hanterar uppladdningen av en profilbild.
 
         [HttpPost]
-        public async Task<IActionResult> LäggTillBild(IFormFile imageFile)
+        public async Task<IActionResult> LäggTillProfilbild(IFormFile imageFile)
         {
             if (imageFile != null && imageFile.Length > 0)
             {
@@ -97,7 +97,7 @@ namespace CVgrupp2Main.Controllers
         }
         // Visar en vy med användarens profilbild.
 
-        public IActionResult VisaBild()
+        public IActionResult VisaProfilbild()
         {
             var personer = data.Person.ToList();
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
@@ -156,7 +156,7 @@ namespace CVgrupp2Main.Controllers
         // Hanterar ändring av kontots privatstatus.
 
         [HttpPost]
-        public async Task<IActionResult> ÄndraStatus(bool privatKonto)
+        public async Task<IActionResult> ÄndraStatus(bool privat)
         {
             var person = await data.Person
                 .FirstOrDefaultAsync(p => p.Användarnamn == User.Identity.Name);
@@ -164,7 +164,7 @@ namespace CVgrupp2Main.Controllers
             if (person != null)
             {
 
-                person.Privat = privatKonto;
+                person.Privat = privat;
 
                 // Spara ändringarna i databasen
                 await data.SaveChangesAsync();

@@ -6,7 +6,7 @@ namespace CVgrupp2Main.Controllers
 {
     public class SökController(DataContext data) : Controller
     {
-        public IActionResult SökVy()
+        public IActionResult Sökning()
         {
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
             return View();

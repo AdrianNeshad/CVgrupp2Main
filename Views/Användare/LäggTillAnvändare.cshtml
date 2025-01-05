@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CVgrupp2Main.DatabasLager
+@model PersonViewModel
+<link rel="stylesheet" type="text/css" href="~/css/Användare.css">
+
+<div class="login-container">
+    <div class="login-form">
+        <form method="post" asp-action="AddPerson">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label>Användarnamn:</label>
+                <input asp-for="Användarnamn" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Lösenord:</label>
+                <input type="password" asp-for="Lösenord" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Bekräfta lösenord:</label>
+                <input type="password" asp-for="BekräftaLösenord" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Lägg till</button>
+            </div>
+        </form>
+    </div>
+</div>

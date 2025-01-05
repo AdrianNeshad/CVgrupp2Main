@@ -7,7 +7,7 @@ namespace CVgrupp2Main.Controllers
     public class ProjektController(DataContext data) : Controller
     {
         //tar fram alla projekt
-        public IActionResult Projekt()
+        public IActionResult VisaProjekt()
         {
             // Räknar och lagrar antalet olästa meddelanden för inloggad användare
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
@@ -73,7 +73,7 @@ namespace CVgrupp2Main.Controllers
         }
         //startar nytt projekt formuläret
         [HttpGet]
-        public IActionResult läggTillProjekt()
+        public IActionResult LäggTillProjekt()
         {
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
             return View();
@@ -104,7 +104,7 @@ namespace CVgrupp2Main.Controllers
         //startar uppdatera projekt formuläret
         [HttpGet]
         [HttpGet]
-        public IActionResult UppdateraProjekt(int projectID)
+        public IActionResult ÄndraProjekt(int projectID)
         {
             var projektToUpdate = data.Projekt.Find(projectID);
             if (projektToUpdate == null)
@@ -124,7 +124,7 @@ namespace CVgrupp2Main.Controllers
 
         // Tar emot och hanterar datan från formuläret för att uppdatera ett befintligt projekt
         [HttpPost]
-        public IActionResult UppdateraProjekt(int projectID, ProjektViewModel viewModel)
+        public IActionResult ÄndraProjekt(int projectID, ProjektViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
