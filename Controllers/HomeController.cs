@@ -10,7 +10,7 @@ namespace CVgrupp2Main.Controllers
     {
         private readonly ILogger<HomeController> _logger = logger;
 
-        public IActionResult InloggadView()
+        public IActionResult Inloggad()
         {
             List<Person> personer;
             // Om användaren inte är inloggad, hämta bara offentliga profiler.
