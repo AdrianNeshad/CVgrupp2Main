@@ -1,0 +1,124 @@
+﻿@using CVgrupp2Main.DatabasLager
+@model Person
+
+<link rel="stylesheet" type="text/css" href="~/css/Användare.css">
+
+<body class="bodyCV">
+    <div class="CVInfo">
+        <header class="VälkomstInfo">
+            <h1>Välkommen till din profil <span class="NamnCV">@Model.Förnamn @Model.Efternamn!</span></h1>
+            @if (Model.ProfilBild != null && Model.ProfilBild.Length > 0)
+            {
+                <img src="data:image;base64,@(Convert.ToBase64String(Model.ProfilBild))" alt="Profilbild" class="ProfilBild" />
+                <p>
+                    <a asp-controller="Person" asp-action="LäggTillProfilbild" class="redigera-knapp">Byt profilbild</a>
+                </p>
+            }
+            else
+            {
+                <p>Profilbild saknas</p>
+                <p>
+                    <a asp-controller="Person" asp-action="LäggTillProfilbild" class="redigera-knapp">Lägg till profilbild</a>
+                </p>
+            }
+        </header>
+
+        <!-- Kontaktinformation -->
+        <section class="cv-sektion KontaktInformationCV">
+            <div class="rubrik-och-knapp">
+                <h2>Kontaktinformation</h2>
+                <a asp-controller="Kontaktuppgifter" asp-action="ÄndraKontaktuppgifter" class="redigera-knapp">Redigera</a>
+            </div>
+            <p><strong>Förnamn:</strong> @Model.Förnamn</p>
+            <p><strong>Efternamn:</strong> @Model.Efternamn</p>
+            <p><strong>Adress:</strong> @Model.Kontaktuppgifter.Adress</p>
+            <p><strong>Telefonnummer:</strong> @Model.Kontaktuppgifter.Telefonnummer</p>
+            <p><strong>Email:</strong> @Model.Kontaktuppgifter.Email</p>
+        </section>
+
+        <!-- Erfarenheter -->
+        <section class="cv-sektion ErfarenheterCV">
+            <div class="rubrik-och-knapp">
+                <h2>Erfarenheter</h2>
+                <form asp-controller="Erfarenheter" asp-action="ÄndraErfarenhet" method="get">
+                    <button type="submit" class="redigera-knapp">Redigera</button>
+                </form>
+            </div>
+            @foreach (var erfarenhet in Model.HarErfarenhet)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @erfarenhet.Erfarenheter.Titel</p>
+                    <p><strong>Beskrivning:</strong> @erfarenhet.Erfarenheter.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <!-- Kompetenser -->
+        <section class="cv-sektion KompetenserCV">
+            <div class="rubrik-och-knapp">
+                <h2>Kompetenser</h2>
+                <form asp-controller="Kompetenser" asp-action="VisaKompetenser" method="get">
+                    <button type="submit" class="redigera-knapp">Redigera</button>
+                </form>
+            </div>
+            @foreach (var kompetens in Model.HarKompetens)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @kompetens.Kompetenser.Titel</p>
+                    <p><strong>Beskrivning:</strong> @kompetens.Kompetenser.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <!-- Projekt -->
+        <section class="cv-sektion ProjektCV">
+            <div class="rubrik-och-knapp">
+                <h2>Projekt</h2>
+                <form asp-controller="Projekt" asp-action="VisaProjekt" method="get">
+                    <button class="redigera-knapp" type="submit">Redigera</button>
+                </form>
+            </div>
+            @foreach (var projekt in Model.HarMedverkat)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @projekt.Projekt.Namn</p>
+                    <p><strong>Beskrivning:</strong> @projekt.Projekt.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <!-- Utbildning -->
+        <section class="cv-sektion UtbildningCV">
+            <div class="rubrik-och-knapp">
+                <h2>Utbildning</h2>
+                <form asp-controller="Utbildningar" asp-action="ÄndraUtbildning" method="get">
+                    <button type="submit" class="redigera-knapp">Redigera</button>
+                </form>
+            </div>
+            @foreach (var utbildning in Model.HarUtbildning)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @utbildning.Utbildningar.Namn</p>
+                    <p><strong>Beskrivning:</strong> @utbildning.Utbildningar.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <!-- PrivatKonto -->
+        <form asp-controller="Person" asp-action="ÄndraStatus" method="post">
+            <label for="privatKonto">Privat konto</label>
+            <input type="checkbox" name="privatKonto" id="privatKonto" value="true" @(Model.Privat ? "checked" : "") />
+
+            <button type="submit" class="redigera-knapp">Spara</button>
+        </form>
+
+
+        @if (Model.Användarnamn == User.Identity.Name)
+        {
+            <a asp-controller="Person" asp-action="ÄndraLösenord" class="ÄndraLösenord">Ändra lösenord</a>
+        }
+    </div>
+</body>
+
+
+

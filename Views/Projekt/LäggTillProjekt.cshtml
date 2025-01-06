@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ProjektViewModel;
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="LäggTillProjekt" method="post">
+    <h2>Lägg till projekt</h2>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Titel</label>
+        <input asp-for="Namn" class="form-control" type="text" />
+    </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Beskrivning</label>
+        <input asp-for="Beskrivning" class="form-control" type="text" />
+    </div>
+
+    <div class="form-group mb-4 mt-1">
+        <input type="submit" value="Lägg till projekt" class="btn btn-success" />
+    </div>
+
+</form>

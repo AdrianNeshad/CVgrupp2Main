@@ -1,0 +1,17 @@
+﻿@using CVgrupp2Main.DatabasLager
+@model List<Person>
+
+@foreach (var person in Model)
+{
+    <div>
+        <h4>@person.Förnamn @person.Efternamn</h4>
+        @if (person.ProfilBild != null && person.ProfilBild.Length > 0)
+        {
+            <img src="data:image;base64,@(Convert.ToBase64String(person.ProfilBild))" alt="Profilbild" />
+        }
+        else
+        {
+            <p>Profilbild saknas</p>
+        }
+    </div>
+}

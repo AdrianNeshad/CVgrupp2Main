@@ -1,5 +1,69 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CVgrupp2Main.DatabasLager
+@model List<Person>
+
+<link rel="stylesheet" type="text/css" href="~/css/Hemsida.css">
+
+<h1>Välkommen @User.Identity.Name!</h1>
+<div class="container">
+    @foreach (var person in Model)
+    {
+        <div class="person-card">
+            <div class="person-image">
+                @if (person.ProfilBild != null)
+                {
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(person.ProfilBild)" alt="Profilbild">
+                }
+                else
+                {
+                    <img src="~/bilder/Användare.png" alt="Standardprofilbild">
+                }
+            </div>
+            <h3>@person.Förnamn @person.Efternamn</h3>
+            <div class="details">
+                <p><strong>Erfarenheter:</strong></p>
+                <ul>
+                    @foreach (var pe in person.HarErfarenhet)
+                    {
+                        <li>@pe.Erfarenheter.Titel - @pe.Erfarenheter.Beskrivning</li>
+                    }
+                </ul>
+            </div>
+            <div class="details">
+                <p><strong>Utbildningar:</strong></p>
+                <ul>
+                    @foreach (var utbildning in person.HarUtbildning)
+                    {
+                        <li>@utbildning.Utbildningar.Namn - @utbildning.Utbildningar.Beskrivning</li>
+                    }
+                </ul>
+            </div>
+            <div class="details">
+                <p><strong>Kompetenser:</strong></p>
+                <ul>
+                    @foreach (var kompetens in person.HarKompetens)
+                    {
+                        <li>@kompetens.Kompetenser.Titel - @kompetens.Kompetenser.Beskrivning</li>
+                    }
+                </ul>
+            </div>
+            <p><a asp-controller="CV" asp-action="VisaCVsida" asp-route-användarnamn="@person.Användarnamn">Visa CV</a></p>
+        </div>
+    }
+</div>
+
+<div class="projekt-div">
+    @if (ViewBag.senasteProjekt != null)
+    {
+        <header class="projekt-header">
+            <h2>Senast tillagda projektet på sidan:</h2>
+            <h1>@ViewBag.senasteProjekt.Namn</h1>
+            <p class="projekt-info">@ViewBag.senasteProjekt.Beskrivning</p>
+            <p class="projekt-skapare">Skapare till projektet: @ViewBag.senasteProjekt.Skapare</p>
+        </header>
+    }
+    <form asp-controller="Projekt" asp-action="VisaProjekt" method="get">
+        <button class="btn btn-success" type="submit">Visa alla projekt</button>
+    </form>
+</div>
+
+

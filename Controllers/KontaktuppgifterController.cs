@@ -1,4 +1,4 @@
-﻿    using CVgrupp2Main.DatabasLager;
+﻿using CVgrupp2Main.DatabasLager;
 using CVgrupp2Main.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -59,7 +59,7 @@ namespace CVgrupp2Main.Controllers
                 data.SaveChanges();
 
                 // Återgår till användarens profilsida efter uppdatering.
-                return RedirectToAction("Profil", "Användare");
+                return RedirectToAction("Profil", "Person");
             }
             //kollar meddelanden,
             //Återvisar formuläret med eventuella felmeddelanden om valideringen misslyckas.

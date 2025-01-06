@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model UtbildningarViewModel
+
 @{
+    ViewData["Title"] = "Lägg till utbildning";
 }
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="LäggTillUtbildning" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="PersonID" />
+
+    <div class="form-group">
+        <label asp-for="Namn">Namn på utbildningen</label>
+        <input asp-for="Namn" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Beskrivning">Beskrivning</label>
+        <textarea asp-for="Beskrivning" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lägg till utbildning</button>
+</form>
+

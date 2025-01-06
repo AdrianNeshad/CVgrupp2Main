@@ -1,0 +1,36 @@
+﻿@using CVgrupp2Main.DatabasLager
+@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "Sökresultat";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/Användare.css">
+<h2>@ViewData["Title"]</h2>
+<div class="login-container">
+    @if (!Model.Any())
+    {
+        <p>Inga resultat</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Namn</th>
+                    <th>Åtgärd</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Förnamn @user.Efternamn</td>
+                        <td><a asp-controller="CV" asp-action="VisaCVsida" asp-route-användarnamn="@user.Användarnamn" class="btn btn-primary btn-sm">Visa CV</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+
