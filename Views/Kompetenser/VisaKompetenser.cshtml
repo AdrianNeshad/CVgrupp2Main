@@ -1,5 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CVgrupp2Main.DatabasLager
+@model IEnumerable<Kompetenser>
+
+<div class="container mt-5">
+    <h2>Mina Kompetenser</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Beskrivning</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kompetens in Model)
+            {
+                <tr>
+                    <td>@kompetens.Titel</td>
+                    <td>@kompetens.Beskrivning</td>
+                    <td>
+                        <form asp-action="RemoveCompetence" method="post">
+                            <input type="hidden" name="id" value="@kompetens.ID" />
+                            <button type="submit" class="btn btn-danger">Ta Bort</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("LäggTillKompetens", "Kompetenser")" class="btn btn-primary">Lägg Till Kompetens</a>
+</div>

@@ -70,23 +70,6 @@
             }
         </section>
 
-        <!-- Utbildning -->
-        <section class="cv-sektion UtbildningCV">
-            <div class="rubrik-och-knapp">
-                <h2>Utbildning</h2>
-                <form asp-controller="Utbildningar" asp-action="ÄndraUtbildning" method="get">
-                    <button type="submit" class="redigera-knapp">Redigera</button>
-                </form>
-            </div>
-            @foreach (var utbildning in Model.HarUtbildning)
-            {
-                <div class="cv-item">
-                    <p><strong>Namn:</strong> @utbildning.Utbildningar.Namn</p>
-                    <p><strong>Beskrivning:</strong> @utbildning.Utbildningar.Beskrivning</p>
-                </div>
-            }
-        </section>
-
         <!-- Projekt -->
         <section class="cv-sektion ProjektCV">
             <div class="rubrik-och-knapp">
@@ -100,6 +83,23 @@
                 <div class="cv-item">
                     <p><strong>Namn:</strong> @projekt.Projekt.Namn</p>
                     <p><strong>Beskrivning:</strong> @projekt.Projekt.Beskrivning</p>
+                </div>
+            }
+        </section>
+
+        <!-- Utbildning -->
+        <section class="cv-sektion UtbildningCV">
+            <div class="rubrik-och-knapp">
+                <h2>Utbildning</h2>
+                <form asp-controller="Utbildningar" asp-action="ÄndraUtbildning" method="get">
+                    <button type="submit" class="redigera-knapp">Redigera</button>
+                </form>
+            </div>
+            @foreach (var utbildning in Model.HarUtbildning)
+            {
+                <div class="cv-item">
+                    <p><strong>Namn:</strong> @utbildning.Utbildningar.Namn</p>
+                    <p><strong>Beskrivning:</strong> @utbildning.Utbildningar.Beskrivning</p>
                 </div>
             }
         </section>
