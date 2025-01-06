@@ -10,12 +10,12 @@ namespace CVgrupp2Main.Models
 
         [Required(ErrorMessage = "Skriv in ditt nya lösenord")]
         [DataType(DataType.Password)]
-        [Compare("bekräftaNyttLösenord")]
+        [Compare("BekräftaNyttLösenord")]
         public string NyttLösenord { get; set; }
 
         [Required(ErrorMessage = "Bekräfta ditt nya lösenord")]
         [DataType(DataType.Password)]
-        [Compare("bekräftaNyttLösenord")]
+        [Compare("BekräftaNyttLösenord")]
         public string BekräftaNyttLösenord { get; set; }
     }
 }

@@ -1,5 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CVgrupp2Main.DatabasLager
+@model IEnumerable<Utbildningar>
+
+<div class="container mt-5">
+    <h2>Mina Utbildningar</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Beskrivning</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var utbildning in Model)
+            {
+                <tr>
+                    <td>@utbildning.Namn</td>
+                    <td>@utbildning.Beskrivning</td>
+                    <td>
+                        <form asp-action="TaBortUtbildning" method="post">
+                            <input type="hidden" name="utbildningId" value="@utbildning.UtbildningID" />
+                            <button type="submit" class="btn btn-danger">Ta Bort</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="LäggTillUtbildning" class="btn btn-primary">Lägg Till Utbildning</a>
+</div>

@@ -1,5 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ProjektViewModel
+
+<form asp-action="ÄndraProjekt" method="post">
+    <h2>Redigera projekt</h2>
+    <input type="hidden" name="projectID" value="@Model.ProjektID" />
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Namn">Projektnamn</label>
+        <input asp-for="Namn" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Beskrivning">Beskrivning</label>
+        <textarea asp-for="Beskrivning" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ändra projekt</button>
+</form>

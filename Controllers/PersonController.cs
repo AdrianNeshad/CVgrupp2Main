@@ -156,7 +156,7 @@ namespace CVgrupp2Main.Controllers
         // Hanterar ändring av kontots privatstatus.
 
         [HttpPost]
-        public async Task<IActionResult> ÄndraStatus(bool privat)
+        public async Task<IActionResult> ÄndraStatus(bool privatKonto)
         {
             var person = await data.Person
                 .FirstOrDefaultAsync(p => p.Användarnamn == User.Identity.Name);
@@ -164,7 +164,7 @@ namespace CVgrupp2Main.Controllers
             if (person != null)
             {
 
-                person.Privat = privat;
+                person.Privat = privatKonto;
 
                 // Spara ändringarna i databasen
                 await data.SaveChangesAsync();
