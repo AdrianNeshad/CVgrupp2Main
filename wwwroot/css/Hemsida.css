@@ -19,3 +19,28 @@
  .login-register{
 
  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #F2BC79;
+}
+
+.person-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.person-card {
+    margin-bottom: 10px;
+}
+
+.person-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
