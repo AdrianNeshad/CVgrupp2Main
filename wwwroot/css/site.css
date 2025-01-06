@@ -20,3 +20,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-nav .nav-item .nav-link {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+    .navbar-nav .nav-item .nav-link:hover {
+        background-color: #F2BC79; /* Light background color on hover */
+        color: black; /* Change text color on hover */
+    }

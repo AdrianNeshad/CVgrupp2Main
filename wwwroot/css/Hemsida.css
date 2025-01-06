@@ -1,11 +1,21 @@
 ﻿body {
-    background-color : lightcyan;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
-    color: red;
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-nav-bar{
-    background-color: black;
-}
+    
+    .image-row img {
+        width: 250px; 
+        border-radius: 8px;  
+    }
+
+ .login-register{
+
+ }
