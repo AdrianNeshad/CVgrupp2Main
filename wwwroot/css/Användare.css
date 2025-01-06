@@ -54,7 +54,7 @@
 
     .cv-sektion h2 {
         font-size: 20px;
-        color: #007bff;
+        color: black;
         margin-bottom: 15px;
     }
 
@@ -82,7 +82,7 @@
 }
 
 .redigera-knapp {
-    background-color: #28a745;
+    background-color: #F2BC79;
     color: white;
     padding: 5px 10px;
     text-decoration: none;
@@ -91,5 +91,5 @@
 }
 
     .redigera-knapp:hover {
-        background-color: #218838;
+        background-color: black;
     }

@@ -1,5 +1,9 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    
+}
+footer{
+    margin-top: 60px;
 }
 
 @media (min-width: 768px) {
@@ -18,7 +22,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+   
 }
 
 .navbar-nav .nav-item .nav-link {
