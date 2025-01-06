@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CVgrupp2Main.DatabasLager;
-using Microsoft.EntityFrameworkCore;
 
 namespace CVgrupp2Main.Controllers
 {
