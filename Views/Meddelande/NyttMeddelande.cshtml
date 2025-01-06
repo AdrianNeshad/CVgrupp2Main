@@ -1,5 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model MeddelandeViewModel
+
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+
+<div class="login-container">
+    <div class="login-form">
+        <form asp-action="SkrivMeddelande" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Mottagare">Till användarnamn:</label>
+                <select asp-for="Mottagare" asp-items="@(new SelectList(ViewBag.Användare, "Value", "Text"))" class="form-control">
+                    <option value="">Välj en användare</option>
+                </select>
+            </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="form-group">
+                    <label asp-for="Avsändare">Från användarnamn:</label>
+                    <input asp-for="Avsändare" value="@User.Identity.Name" readonly class="form-control" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label asp-for="Avsändare">Avsändares användarnamn:</label>
+                    <input asp-for="Avsändare" class="form-control" />
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="Meddelande">Meddelande:</label>
+                <textarea asp-for="Meddelande" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Skicka</button>
+            </div>
+        </form>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a asp-controller="Meddelande" asp-action="VisaMeddelanden" class="btn btn-secondary">Visa meddelanden</a>
+        }
+    </div>
+</div>

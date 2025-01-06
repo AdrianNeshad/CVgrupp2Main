@@ -1,5 +1,54 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CVgrupp2Main.DatabasLager
+@model List<Meddelande>
+
+
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+
+<div class="login-container">
+    <div class="login-form">
+        <h2 class="mb-4">Meddelanden</h2>
+
+        <div class="mb-3">
+            <a asp-controller="Meddelande" asp-action="NyttMeddelande" class="redigera-knapp">Nytt meddelande</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Innehåll</th>
+                        <th>Avsändare</th>
+                        <th>Åtgärd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var meddelande in Model)
+
+                    {
+                        <tr>
+                            <td>@meddelande.Innehåll</td>
+                            <td>@meddelande.HarSkickat.FirstOrDefault()?.Användarnamn</td>
+                            <td>
+                                @if (meddelande.HarLästs)
+
+                                {
+                                    <span class="btn btn-primary btn-sm disabled" aria-disabled="true">Läst</span>
+                                }
+
+                                else
+
+                                {
+                                    <form asp-controller="Meddelande" asp-action="MarkeraSomLäst" method="post">
+                                        <input type="hidden" name="meddelandeId" value="@meddelande.ID" />
+                                        <button type="submit" class="btn btn-primary btn-sm">Markera som läst</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
