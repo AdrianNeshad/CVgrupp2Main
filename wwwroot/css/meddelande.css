@@ -1,23 +1,7 @@
-﻿body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #f8f9fa; /* Ljus bakgrundsfärg */
-    display: flex;
-    flex-direction: column; /* Nytt: Hantera navbar och innehåll vertikalt */
-}
-
-.navbar {
-    position: fixed; /* Fixera navbaren högst upp */
-    top: 0;
-    width: 100%;
-    z-index: 1030; /* Håll navbaren ovanför andra element */
-    height: 60px; /* Sätt höjden på navbaren */
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-}
+﻿
 
 .message-box {
+    display: flex;
     width: 80%; /* Anpassa bredden efter behov */
     max-width: 600px; /* Gör boxen max 600px bred */
     background-color: #ffffff;
