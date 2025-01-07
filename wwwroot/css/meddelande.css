@@ -1,9 +1,10 @@
 ﻿
 
 .message-box {
+    justify-content: center;
     display: flex;
     width: 80%; /* Anpassa bredden efter behov */
-    max-width: 600px; /* Gör boxen max 600px bred */
+    max-width: 400px; /* Gör boxen max 600px bred */
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
