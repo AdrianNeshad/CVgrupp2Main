@@ -147,3 +147,18 @@ button.btn-success {
         padding: 15px;
     }
 }
+
+/* Ny CSS för bilderna på index */
+.image-row {
+    display: flex; /* Gör bilderna horisontella */
+    justify-content: center; /* Centrerar bilderna horisontellt */
+    gap: 15px; /* Lägger till avstånd mellan bilderna */
+    margin-top: 30px; /* Lägg till lite utrymme ovanför */
+}
+
+.image-item {
+    width: 80px; /* Sätt en fast bredd för bilderna */
+    height: auto; /* Låt höjden justeras för att behålla proportionerna */
+    border-radius: 8px; /* Lägg till rundade hörn om du vill */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lägger till en liten skugga för att göra bilderna mer stiliga */
+}
