@@ -94,7 +94,7 @@
         </form>
     }
 </div>
- *@
+@*  *@
 <link rel="stylesheet" type="text/css" href="~/css/Redigera.css">
 
 <div class="container mt-5">
@@ -142,13 +142,13 @@
                             p => p.Medverkande == User.Identity.Name && p.ProjektID == item.ProjektID);
                             if (inProject == null)
                             {
-                                <form asp-action="AnslutTillProjekt" asp-route-projectID="@item.ProjektID">
+                                <form asp-action="AnslutTillProjekt" asp-route-projectID="@item.ProjektID" method="post">
                                     <button class="btn btn-success" type="submit">Anslut till projekt</button>
                                 </form>
                             }
                             else
                             {
-                                <form asp-action="LämnaProjekt" asp-route-project="@inProject.ProjektID">
+                                <form asp-action="LämnaProjekt" asp-route-project="@inProject.ProjektID" method="post">
                                     <button class="btn btn-danger" type="submit">Lämna projektet</button>
                                 </form>
                             }
@@ -167,9 +167,8 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <form asp-controller="Projekt" asp-action="läggTillProjekt" method="get">
-            <button class="btn btn-success" type="submit">Lägg till projekt</button>
-        </form>
+        <div class="text-center mt-4">
+            <a asp-action="läggTillProjekt" class="btn btn-primary">Lägg till projekt</a>
+        </div>
     }
 </div>
-
