@@ -7,7 +7,8 @@
 <link rel="stylesheet" type="text/css" href="~/css/Sökresultat.css">
 <link rel="stylesheet" type="text/css" href="~/css/Size.css">
 
-<h2>@ViewData["Title"]</h2>
+<h2>Sökresultat</h2>
+<div class ="search-box"">
 <div class="search-results-container">
     @if (!Model.Any())
     {
@@ -19,11 +20,11 @@
         {
                     <div class="search-item">
                         <h3>@user.Förnamn @user.Efternamn</h3>
-                        <p>@user.Användarnamn</p>
                         <a asp-controller="CV" asp-action="VisaCVsida" asp-route-användarnamn="@user.Användarnamn" class="btn-details">Visa CV</a>
                     </div>
         }
     }
+</div>
 </div>
 
 
