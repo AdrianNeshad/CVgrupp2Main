@@ -25,30 +25,5 @@
         height: 80px;
     }
 
-    .cv-container {
-        grid-template-columns: 1fr; /* Endast en kolumn för små skärmar */
-        grid-template-areas:
-            "left-section"
-            "right-top"
-            "right-bottom";
-    }
 
-    .left-section {
-        padding: 15px;
-    }
-
-    .right-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .profil-bild {
-        width: 60px;
-        height: 60px;
-    }
-
-    .person-card {
-        padding: 15px;
-    }
-}
 }
