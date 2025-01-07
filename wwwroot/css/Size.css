@@ -1,0 +1,27 @@
+
+
+@media (max-width: 768px) {
+    .CVInfo {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .redigera-knapp {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rubrik-och-knapp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cv-sektion {
+        padding: 15px;
+    }
+
+    .ProfilBild {
+        width: 80px;
+        height: 80px;
+    }
+}
