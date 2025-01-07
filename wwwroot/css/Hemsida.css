@@ -91,7 +91,6 @@
 a {
     color: #28a745;
     text-decoration: none;
-    font-weight: bold;
 }
 
     a:hover {
@@ -121,3 +120,45 @@ button.btn-success {
         background-color: #218838;
     }
 
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-columns: 1fr; /* Endast en kolumn för små skärmar */
+        grid-template-areas:
+            "left-section"
+            "right-top"
+            "right-bottom";
+    }
+
+    .left-section {
+        padding: 15px;
+    }
+
+    .right-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .profil-bild {
+        width: 60px;
+        height: 60px;
+    }
+
+    .person-card {
+        padding: 15px;
+    }
+}
+
+/* Ny CSS för bilderna på index */
+.image-row {
+    display: flex; /* Gör bilderna horisontella */
+    justify-content: center; /* Centrerar bilderna horisontellt */
+    gap: 15px; /* Lägger till avstånd mellan bilderna */
+    margin-top: 30px; /* Lägg till lite utrymme ovanför */
+}
+
+.image-item {
+    width: 80px; /* Sätt en fast bredd för bilderna */
+    height: auto; /* Låt höjden justeras för att behålla proportionerna */
+    border-radius: 8px; /* Lägg till rundade hörn om du vill */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lägger till en liten skugga för att göra bilderna mer stiliga */
+}
