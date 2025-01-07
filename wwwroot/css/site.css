@@ -18,5 +18,38 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* För att skapa scroll */
+    background-attachment: fixed; /* Fixera bakgrunden */
+    background-size: cover;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #8d24aa,#1f26a7, #4e7afb, #1894ac);
+}
+
+.progress {
+    height: 3.5px;
+    width: 0%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: progress 1s linear;
+    z-index: 998;
+}
+
+
+@keyframes progress {
+    to {
+        background-color: rgb(20, 255, 226);
+        width: 100%;
+    }
+}
+
+
+:root * {
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
 }
