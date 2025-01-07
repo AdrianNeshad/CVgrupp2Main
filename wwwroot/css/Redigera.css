@@ -1,4 +1,4 @@
-﻿/* Generella stilinställningar */
+﻿
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 
-/*kommentar*/
+
 .container {
     width: 80%;
     max-width: 900px; /* Maximal bredd på innehållet */
@@ -17,7 +17,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Rubrik */
+
 h2 {
     font-size: 28px;
     color: #333;
@@ -25,14 +25,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Tabellens stil */
+
 .table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-    /* Tabellens rubrik */
+
     .table thead {
         background-color: #007bff;
         color: white;
@@ -44,17 +44,17 @@ h2 {
         border-bottom: 1px solid #ddd;
     }
 
-    /* Första raden i tabellen (rubriker) */
+   
     .table th {
         font-weight: bold;
     }
 
-    /* För andra rader i tabellen (dataposter) */
+   
     .table tr:nth-child(even) {
         background-color: #f9f9f9;
     }
 
-/* Ta bort-knappen */
+
 .btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
@@ -71,7 +71,7 @@ h2 {
         background-color: #c82333;
     }
 
-/* Lägg till erfarenhet-knappen */
+
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
@@ -91,7 +91,10 @@ h2 {
         background-color: #0056b3;
     }
 
-/* Responsiv design */
+btn btn-warning{
+    margin-bottom: 4px;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 95%;

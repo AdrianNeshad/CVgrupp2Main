@@ -1,6 +1,6 @@
 ﻿@model PersonProjektViewModel
 
-<link rel="stylesheet" type="text/css" href="~/css/Size.css">
+@* <link rel="stylesheet" type="text/css" href="~/css/Size.css">
 
 <div class="container mt-5">
     <h2>Projektlista</h2>
@@ -94,5 +94,81 @@
         </form>
     }
 </div>
+@*  *@
+<link rel="stylesheet" type="text/css" href="~/css/Redigera.css">
 
+<div class="container mt-5">
+    <h2>Projektlista</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Skapare</th>
+                <th>Titel</th>
+                <th>Beskrivning</th>
+                <th>Deltagare</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Projekt)
+            {
+                <tr>
+                    <td>@item.Person.Användarnamn</td>
+                    <td>@item.Namn</td>
+                    <td>@item.Beskrivning</td>
+                    <td>
+                        @if (Model.PersonProjekt != null)
+                        {
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                var deltagare = Model.PersonProjekt
+                                .Where(e => e.ProjektID == item.ProjektID)
+                                .Select(e => e.Person.Användarnamn);
+                                @string.Join(", ", deltagare)
+                            }
+                            else
+                            {
+                                var deltagare = Model.PersonProjekt
+                                .Where(e => e.ProjektID == item.ProjektID && e.Person.Privat == false)
+                                .Select(e => e.Person.Användarnamn);
+                                @string.Join(", ", deltagare)
+                            }
+                        }
+                    </td>
+                    <td>
+                        @if (User.Identity.IsAuthenticated && item.Skapare != User.Identity.Name)
+                        {
+                            var inProject = Model.PersonProjekt?.FirstOrDefault(
+                            p => p.Medverkande == User.Identity.Name && p.ProjektID == item.ProjektID);
+                            if (inProject == null)
+                            {
+                                <form asp-action="AnslutTillProjekt" asp-route-projectID="@item.ProjektID" method="post">
+                                    <button class="btn btn-success" type="submit">Anslut till projekt</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <form asp-action="LämnaProjekt" asp-route-project="@inProject.ProjektID" method="post">
+                                    <button class="btn btn-danger" type="submit">Lämna projektet</button>
+                                </form>
+                            }
+                        }
 
+                        @if (@item.Skapare == User.Identity.Name)
+                        {
+                            <a asp-action="ÄndraProjekt" asp-route-projectID="@item.ProjektID" class="btn btn-warning">Redigera projekt</a>
+                            <a asp-action="TaBortProjekt" asp-route-id="@item.ProjektID" class="btn btn-danger">Ta bort projekt</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="text-center mt-4">
+            <a asp-action="läggTillProjekt" class="btn btn-primary">Lägg till projekt</a>
+        </div>
+    }
+</div>
