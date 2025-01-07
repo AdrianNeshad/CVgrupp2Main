@@ -1,104 +1,45 @@
-﻿h1 {
-    text-align: center;
+﻿body {
+    margin: 0;
+    padding: 0;
 }
 
-.person-card .person-image {
-    width: 100%;
-    height: auto;
+
+.image-row {
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    gap: 20px;
 }
 
-    .person-card .person-image img {
-        max-width: 100%;
-        max-height: 150px;
-        object-fit: cover;
+
+    .image-row img {
+        width: 250px;
+        border-radius: 8px;
     }
+
+.login-register {
+}
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    background-color: #F2BC79;
+}
+
+.person-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
 .person-card {
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    background-color: lightblue;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
 }
 
-.details p, .details ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.person-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
 }
-
-    .details ul li {
-        margin-bottom: 10px;
-    }
-
-a {
-    color: blue;
-    text-decoration: none;
-}
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-.projekt-div {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.projekt-header {
-    margin-bottom: 20px;
-}
-
-    .projekt-header h2 {
-        color: #333;
-        font-size: 1.2em;
-    }
-
-    .projekt-header h1 {
-        color: #007bff;
-        font-size: 1.5em;
-        margin-top: 10px;
-    }
-
-.projekt-info,
-.projekt-skapare {
-    color: #666;
-    font-size: 0.9em;
-    margin-top: 10px;
-}
-
-.projekt-actions {
-    align-self: flex-end;
-}
-
-.btn-success {
-    background-color: lightblue;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-    .btn-success:hover {
-        background-color: darkblue;
-    }
