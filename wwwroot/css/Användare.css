@@ -1,4 +1,4 @@
-﻿.login-container {
+﻿/*.login-container {
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -92,4 +92,280 @@
 
     .redigera-knapp:hover {
         background-color: #218838;
+    }*/
+
+
+/*ny html under*/
+
+/*body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.bodyCV {
+    background-color: #f9f9f9;
+}
+
+.CVInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.VälkomstInfo h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ProfilBild {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.cv-sektion {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .cv-sektion h2 {
+        font-size: 22px;
+        color: #007bff;
+        margin-bottom: 15px;
     }
+
+.cv-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+    .cv-item p {
+        margin: 0 0 10px;
+    }
+
+    .cv-item strong {
+        color: #333;
+    }
+
+.rubrik-och-knapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.redigera-knapp {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+    .redigera-knapp:hover {
+        background-color: #218838;
+    }*/
+
+/* Privat konto sektion */
+/*form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    form label {
+        font-size: 16px;
+        color: #333;
+    }
+
+    form input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    form button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+
+@media (max-width: 768px) {
+    .CVInfo {
+        grid-template-columns: 1fr;
+    }
+}*/
+
+/*ny html under-senaste*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.bodyCV {
+    background-color: #f9f9f9;
+}
+
+.CVInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 1200px; /* Max width for the content */
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.VälkomstInfo h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ProfilBild {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.cv-sektion {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .cv-sektion h2 {
+        font-size: 22px;
+        color: #007bff;
+        margin-bottom: 15px;
+    }
+
+.cv-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+    .cv-item p {
+        margin: 0 0 10px;
+    }
+
+    .cv-item strong {
+        color: #333;
+    }
+
+.rubrik-och-knapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.redigera-knapp {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap; /* Prevents the button text from breaking into a new line */
+}
+
+    .redigera-knapp:hover {
+        background-color: #218838;
+    }
+
+/* Privat konto sektion */
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    form label {
+        font-size: 16px;
+        color: #333;
+    }
+
+    form input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    form button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+
+/* Responsivitet: När skärmen är mindre än 768px (mobil/skärmstorlekar) */
+@media (max-width: 768px) {
+    .CVInfo {
+        grid-template-columns: 1fr; /* Ställ om till en kolumn */
+        padding: 15px; /* Minska padding för mindre skärmar */
+    }
+
+    .redigera-knapp {
+        width: 100%; /* Gör knappen bred nog för att ta upp hela bredden på mindre skärmar */
+        text-align: center; /* Centrera texten i knappen */
+    }
+
+    .rubrik-och-knapp {
+        flex-direction: column; /* Förändra till vertikal layout för små skärmar */
+        align-items: center; /* Centrera innehållet */
+    }
+
+    .cv-sektion {
+        padding: 15px; /* Minska padding på mindre skärmar */
+    }
+
+    .ProfilBild {
+        width: 80px; /* Minska profilbildens storlek på små skärmar */
+        height: 80px;
+    }
+}
+
+
