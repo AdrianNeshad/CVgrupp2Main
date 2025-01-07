@@ -15,10 +15,6 @@
     margin-top: 80px; /* Skapa avstånd från navbaren (60px höjd + 20px marginal) */
 }
 
-h2 {
-    text-align: center;
-}
-
 .table-responsive {
     max-height: 400px; /* Gör tabellen scrollbar om den blir för lång */
     overflow-y: auto;

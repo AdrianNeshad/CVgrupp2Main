@@ -7,6 +7,26 @@ body {
     color: #333;
 }
 
+.search-box {
+    justify-content: center;
+    display: flex;
+    width: 80%; /* Anpassa bredden efter behov */
+    max-width: 500px; /* Gör boxen max 600px bred */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+    padding: 20px;
+    overflow: hidden;
+    margin: auto; /* Centrerar boxen horisontellt och vertikalt */
+    margin-top: 80px; /* Skapa avstånd från navbaren (60px höjd + 20px marginal) */
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
 /* Container för hela sökresultatet */
 .search-results-container {
     display: grid;
