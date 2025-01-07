@@ -1,46 +1,123 @@
-﻿/*body {
+﻿body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-
-.image-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-
-    .image-row img {
-        width: 250px;
-        border-radius: 8px;
-    }
-
-.login-register {
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #F2BC79;
-}
-
-.person-box {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
     background-color: #f9f9f9;
 }
 
-.person-card {
-    margin-bottom: 10px;
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Två kolumner */
+    grid-template-rows: auto auto; /* Får höjden att anpassas till innehållet */
+    grid-template-areas:
+        "left-section right-top"
+        "left-section right-bottom";
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.person-image img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+.left-section {
+    grid-area: left-section;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 600px; /* Gör den vänstra sektionen kortare */
+    overflow-y: auto; /* Gör så att den kan scrolla om innehållet är för långt */
 }
-*/
+
+.right-section {
+    grid-area: right-top / right-bottom;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-top {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-bottom {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    /* Första bottom-området (Knapp för alla projekt) */
+    .right-bottom form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+/* Resten av stilen */
+.profil-bild {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.person-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .details ul {
+        padding-left: 20px;
+    }
+
+    .details li {
+        margin-bottom: 10px;
+    }
+
+a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #218838;
+    }
+
+.projekt-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projekt-info, .projekt-skapare {
+    font-size: 16px;
+    color: #555;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    button.btn-success:hover {
+        background-color: #218838;
+    }
+

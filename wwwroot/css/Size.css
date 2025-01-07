@@ -1,2 +1,54 @@
-﻿body {
+﻿
+
+@media (max-width: 768px) {
+    .CVInfo {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .redigera-knapp {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rubrik-och-knapp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cv-sektion {
+        padding: 15px;
+    }
+
+    .ProfilBild {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr; /* Endast en kolumn för små skärmar */
+        grid-template-areas:
+            "left-section"
+            "right-top"
+            "right-bottom";
+    }
+
+    .left-section {
+        padding: 15px;
+    }
+
+    .right-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .profil-bild {
+        width: 60px;
+        height: 60px;
+    }
+
+    .person-card {
+        padding: 15px;
+    }
+}
 }
