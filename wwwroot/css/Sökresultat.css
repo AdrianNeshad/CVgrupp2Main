@@ -1,0 +1,157 @@
+﻿/* Grundläggande sidlayout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Container för hela sökresultatet */
+.search-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+/* Sökrutan för varje objekt */
+.search-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+}
+
+    .search-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+  
+
+    .search-item h3 {
+        font-size: 25px;
+        margin: 15px;
+        color: #007bff;
+        text-align: center;
+    }
+
+    /* Kort beskrivning under titeln */
+    .search-item p {
+        font-size: 20px;
+        padding: 0 15px 15px;
+        text-align: center;
+        color: #555;
+    }
+
+    /* Knappen "Visa mer" eller "Detaljer" för varje objekt */
+    .search-item .btn-details {
+        display: block;
+        text-align: center;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 0 0 8px 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .search-item .btn-details:hover {
+            background-color: #005bb5;
+        }
+
+
+
+
+
+/* Grundläggande sidlayout */
+/*body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}*/
+
+/* Container för hela sökresultatet */
+/*.search-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}*/
+
+/* Sökrutan för varje objekt */
+/*.search-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+}*/
+
+    /* Hover-effekt på varje sökresultat */
+    /*.search-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }*/
+
+    /* Bildstilar (om du har bilder i varje resultat) */
+    /*.search-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid #ddd;
+    }*/
+
+    /* Titeln på varje sökresultat */
+    /*.search-item h3 {
+        font-size: 18px;
+        margin: 15px;
+        color: #007bff;
+        text-align: center;
+    }*/
+
+    /* Kort beskrivning under titeln */
+    /*.search-item p {
+        font-size: 14px;
+        padding: 0 15px 15px;
+        text-align: center;
+        color: #555;
+    }*/
+
+    /* Knappen "Visa mer" eller "Detaljer" för varje objekt */
+    /*.search-item .btn-details {
+        display: block;
+        text-align: center;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 0 0 8px 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .search-item .btn-details:hover {
+            background-color: #005bb5;
+        }*/
+
+    /* Profilbild (placeholder om ingen bild finns) */
+    /*.search-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid #ddd;
+    }*/
