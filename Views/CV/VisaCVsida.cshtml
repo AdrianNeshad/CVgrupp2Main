@@ -1,7 +1,7 @@
 ﻿@using CVgrupp2Main.DatabasLager
 @model Person
 
-<link rel="stylesheet" type="text/css" href="~/css/Hemsida.css">
+<link rel="stylesheet" type="text/css" href="~/css/MittCV.css">
 
 <body class="bodyCV">
     <div class="CVInfo">
@@ -9,7 +9,7 @@
             <h1>Välkommen till CV-sidan för <span class="NamnCV">@Model.Användarnamn</span></h1>
             @if (Model.ProfilBild != null && Model.ProfilBild.Length > 0)
             {
-                <img src="data:image;base64,@(Convert.ToBase64String(Model.ProfilBild))" alt="Profilbild" class="ProfilBild" />
+                <img src="data:image;base64,@(Convert.ToBase64String(Model.ProfilBild))" alt="Profilbild" class="ProfilBild" style="max-width: 20%; height: auto;" />
             }
             else
             {
@@ -72,7 +72,7 @@
 
         @if (Model.Användarnamn == User.Identity.Name)
         {
-            <a asp-controller="Person" asp-action="ÄndraLösenord" class="btn btn-secondary">Ändra ditt lösenord</a>
+           
         }
 
         <a asp-controller="Meddelande" asp-action="NyttMeddelande" class="btn btn-primary">Skapa ett nytt meddelande</a>
