@@ -31,8 +31,8 @@ namespace CVgrupp2Main.DatabasLager
                 new Utbildningar
                 {
                     UtbildningID = 1,
-                    Namn = "Vivalla University",
-                    Beskrivning = "Becknarkunskap"
+                    Namn = "Örebro University",
+                    Beskrivning = "Systemkunskap"
                 }
             );
 
@@ -42,7 +42,7 @@ namespace CVgrupp2Main.DatabasLager
                 {
                     ID = 1,
                     Titel = "Mecka med bilar",
-                    Beskrivning = "Tjuvstarta o sånt"
+                    Beskrivning = "Lagar motorer"
                 }
 
             );
@@ -52,7 +52,7 @@ namespace CVgrupp2Main.DatabasLager
                 new Erfarenheter
                 {
                     ID = 1,
-                    Titel = "Polismyndigheten CTO",
+                    Titel = "Frisör",
                     Beskrivning = "Systemutvecklare"
                 }
 
