@@ -14,12 +14,13 @@ namespace CVgrupp2Main.Controllers
         {
             return View();
         }
-        // Hanterar inlämningen av det nya personformuläret.
+        // Behandlar personformulärets nya inlämning.
 
         [HttpPost]
         public async Task<IActionResult> LäggTillAnvändare(PersonViewModel viewModel)
         {
-            if (ModelState.IsValid) // Kontrollerar om modellens data är giltig.
+            if (ModelState.IsValid) 
+             // ovan behandlar giltigheten på modellens data.
             {
                 ApplicationUser user = new ApplicationUser();
                 user.UserName = viewModel.Användarnamn;
@@ -27,7 +28,7 @@ namespace CVgrupp2Main.Controllers
                 var result = await userManager.CreateAsync(user, viewModel.Lösenord);
                 if (result.Succeeded)
                 {
-                    // Skapar en ny Person och tillhörande kontaktuppgifter.
+                    // Ny individ skapas och dess kontaktuppgifter. 
 
                     var person = new Person()
                     {
@@ -47,7 +48,7 @@ namespace CVgrupp2Main.Controllers
                     };
 
                     data.Kontaktuppgifter.Add(kontaktuppgifter);
-                    person.Kontaktuppgifter = kontaktuppgifter; // Länka kontaktuppgifter till personen
+                    person.Kontaktuppgifter = kontaktuppgifter; 
 
                     data.Person.Add(person);
                     data.SaveChanges();
@@ -62,7 +63,7 @@ namespace CVgrupp2Main.Controllers
 
             return View(viewModel);
         }
-        // Visar formulär för att ladda upp en profilbild.
+        // Behandlar visning av formulär för profilbild.
 
         public IActionResult LäggTillProfilbild()
         {
@@ -70,7 +71,7 @@ namespace CVgrupp2Main.Controllers
 
             return View();
         }
-        // Hanterar uppladdningen av en profilbild.
+        // Behandlar uppladdningen av profilbild.
 
         [HttpPost]
         public async Task<IActionResult> LäggTillProfilbild(IFormFile imageFile)
@@ -95,7 +96,7 @@ namespace CVgrupp2Main.Controllers
 
             return RedirectToAction("Profil", "Person");
         }
-        // Visar en vy med användarens profilbild.
+        
 
         public IActionResult VisaProfilbild()
         {
@@ -105,7 +106,7 @@ namespace CVgrupp2Main.Controllers
             return View(personer);
         }
 
-        // Visar användarens profilvy.
+        // Användarens profilvy visas upp.
 
         public IActionResult Profil()
         {
@@ -114,7 +115,7 @@ namespace CVgrupp2Main.Controllers
 
             return View(person);
         }
-        // Visar formulär för att ändra lösenord.
+        // Formulär för ändra lösenord visas.
 
         [Authorize]
         public IActionResult ÄndraLösenord()
@@ -123,7 +124,7 @@ namespace CVgrupp2Main.Controllers
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
             return View(model);
         }
-        // Hanterar ändring av lösenord.
+        // Ändring för lösenord.
 
         [HttpPost]
         public async Task<IActionResult> ÄndraLösenord(LösenordÄndringViewModel model)
@@ -153,7 +154,7 @@ namespace CVgrupp2Main.Controllers
 
             return RedirectToAction("Profil", "Person");
         }
-        // Hanterar ändring av kontots privatstatus.
+        // Ändring av kontots privata status.
 
         [HttpPost]
         public async Task<IActionResult> ÄndraStatus(bool privatKonto)

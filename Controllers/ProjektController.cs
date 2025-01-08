@@ -6,13 +6,13 @@ namespace CVgrupp2Main.Controllers
 {
     public class ProjektController(DataContext data) : Controller
     {
-        //tar fram alla projekt
+        
         public IActionResult VisaProjekt()
         {
-            // Räknar och lagrar antalet olästa meddelanden för inloggad användare
+            // Lagrar och summerar antalet meddelanden användare fått.
             ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
 
-            // Skapar en ViewModel för att hålla data om personer och projekt
+            // ViewModel
             var model = new PersonProjektViewModel();
 
             // Hämtar olika projekt beroende på om användaren är inloggad eller ej
