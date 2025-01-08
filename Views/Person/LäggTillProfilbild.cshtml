@@ -1,15 +1,17 @@
-﻿<link rel="stylesheet" type="text/css" href="~/css/Användare.css">
+﻿<link rel="stylesheet" type="text/css" href="~/css/profilbild.css">
 <link rel="stylesheet" type="text/css" href="~/css/Size.css">
 
 <div class="login-container">
     <form asp-controller="Person" asp-action="LäggTillProfilbild" method="post" enctype="multipart/form-data" class="login-form">
         <div asp-validation-summary="All" class="text-danger"></div>
 
+        <!-- Välj bild -->
         <div class="form-group">
-            <label>Välj en bild:</label>
-            <input type="file" name="imageFile" class="form-control" />
+            <label for="imageFile">Välj en bild:</label>
+            <input type="file" name="imageFile" id="imageFile" class="form-control" />
         </div>
 
+        <!-- Ladda upp knapp -->
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Ladda upp bild</button>
         </div>
