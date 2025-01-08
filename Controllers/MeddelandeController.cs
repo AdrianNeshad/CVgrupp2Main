@@ -30,7 +30,7 @@ namespace CVgrupp2Main.Controllers
 
         // Hanterar POST-begäran för att skapa ett nytt meddelande
         [HttpPost]
-        public IActionResult SkrivMeddelande(MeddelandeViewModel meddelandeView)
+        public IActionResult SkrivMeddelande(MeddelandeViewModel meddelandeView, bool anonym = false)
         {
             // Ladda användarnamn för dropdown-menyn
             ViewBag.Användare = data.Person.Select(p => new SelectListItem
@@ -39,14 +39,13 @@ namespace CVgrupp2Main.Controllers
                 Text = p.Användarnamn
             }).ToList();
 
-            // Kontrollera om avsändaren finns i databasen om en användare som inte är inloggad vill skicka ett meddelande
-            if (!User.Identity.IsAuthenticated)
+            // Kontrollera anonymitet
+            string avsändare = anonym ? "Anonym" : (User.Identity.IsAuthenticated ? User.Identity.Name : meddelandeView.Avsändare);
+
+            // Om anonymitet inte är markerad och avsändarnamn saknas
+            if (!anonym && string.IsNullOrWhiteSpace(avsändare))
             {
-                bool avsändareFinns = data.Person.Any(p => p.Användarnamn == meddelandeView.Avsändare);
-                if (!avsändareFinns)
-                {
-                    ModelState.AddModelError("Avsändare", "Användarnamnet finns inte");
-                }
+                ModelState.AddModelError("Avsändare", "Användarnamn för avsändare krävs om det inte skickas anonymt.");
             }
 
             // Validera formuläret
@@ -56,36 +55,45 @@ namespace CVgrupp2Main.Controllers
             }
 
             // Skapa och spara det nya meddelandet i databasen
-            if (ModelState.IsValid)
+            Meddelande meddelande = new()
             {
-                Meddelande meddelande = new();
-                meddelande.Innehåll = meddelandeView.Meddelande;
-                data.Meddelande.Add(meddelande);
-                data.SaveChanges();
+                Innehåll = meddelandeView.Meddelande
+            };
+            data.Meddelande.Add(meddelande);
+            data.SaveChanges();
 
-                // Lägg till avsändare och mottagare för meddelandet
-                Meddelande senasteMeddelande = data.Meddelande.OrderByDescending(m => m.ID).Take(1).FirstOrDefault();
-                int id = senasteMeddelande.ID;
+            // Lägg till avsändare och mottagare för meddelandet
+            var senasteMeddelande = data.Meddelande.OrderByDescending(m => m.ID).FirstOrDefault();
+            if (senasteMeddelande != null)
+            {
+                if (!anonym)
+                {
+                    var harSkickat = new PersonSkickatMeddelande
+                    {
+                        MeddelandeID = senasteMeddelande.ID,
+                        Användarnamn = avsändare
+                    };
+                    data.PersonSkickatMeddelande.Add(harSkickat);
+                }
 
-                var harSkickat = new PersonSkickatMeddelande();
-                harSkickat.MeddelandeID = id;
-                harSkickat.Användarnamn = User.Identity.IsAuthenticated ? User.Identity.Name : meddelandeView.Avsändare; ;
-                data.PersonSkickatMeddelande.Add(harSkickat);
-                data.SaveChanges();
-
-                var harMottagit = new PersonMottagitMeddelande();
-                harMottagit.MeddelandeID = id;
-                harMottagit.Användarnamn = meddelandeView.Mottagare;
+                var harMottagit = new PersonMottagitMeddelande
+                {
+                    MeddelandeID = senasteMeddelande.ID,
+                    Användarnamn = meddelandeView.Mottagare
+                };
                 data.PersonMottagitMeddelande.Add(harMottagit);
-
                 data.SaveChanges();
-                ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande.Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs).Count();
-
-                return RedirectToAction("Inloggad", "Home");
             }
 
-            return View(NyttMeddelande);
+            ViewBag.AntalMeddelanden = data.PersonMottagitMeddelande
+                .Where(m => m.Användarnamn == User.Identity.Name && !m.Meddelande.HarLästs)
+                .Count();
+
+            return RedirectToAction("Inloggad", "Home");
         }
+
+
+
 
         // Visar en lista över alla meddelanden för den inloggade användaren
         public IActionResult VisaMeddelanden()
