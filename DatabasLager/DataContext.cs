@@ -31,17 +31,9 @@ namespace CVgrupp2Main.DatabasLager
                 new Utbildningar
                 {
                     UtbildningID = 1,
-                    Namn = "A",
-                    Beskrivning = "A"
-                },
-
-                new Utbildningar
-                {
-                    UtbildningID = 2,
-                    Namn = "B",
-                    Beskrivning = "B"
+                    Namn = "Vivalla University",
+                    Beskrivning = "Becknarkunskap"
                 }
-
             );
 
             modelBuilder.Entity<Kompetenser>().HasData(
@@ -49,8 +41,8 @@ namespace CVgrupp2Main.DatabasLager
                 new Kompetenser
                 {
                     ID = 1,
-                    Titel = "A",
-                    Beskrivning = "A"
+                    Titel = "Mecka med bilar",
+                    Beskrivning = "Tjuvstarta o sånt"
                 }
 
             );
@@ -60,8 +52,8 @@ namespace CVgrupp2Main.DatabasLager
                 new Erfarenheter
                 {
                     ID = 1,
-                    Titel = "A",
-                    Beskrivning = "B"
+                    Titel = "Polismyndigheten CTO",
+                    Beskrivning = "Systemutvecklare"
                 }
 
             );
@@ -81,8 +73,8 @@ namespace CVgrupp2Main.DatabasLager
                 new Person
                 {
                     Användarnamn = "A",
-                    Förnamn = "A",
-                    Efternamn = "B",
+                    Förnamn = "Pasta",
+                    Efternamn = "Bolognese",
                     Lösenord = "Abc123",
                     Privat = false,
                     KontaktID = 1,
@@ -95,7 +87,7 @@ namespace CVgrupp2Main.DatabasLager
                 new Kontaktuppgifter
                 {
                     KontaktID = 1,
-                    Adress = "A123",
+                    Adress = "Brickebacken 123",
                     Telefonnummer = "+46 123",
                     Email = "ABC@edunet.oru.se"
                 }
@@ -106,8 +98,8 @@ namespace CVgrupp2Main.DatabasLager
                 new Projekt
                 {
                     ProjektID = 1,
-                    Namn = "A",
-                    Beskrivning = "A",
+                    Namn = ".NET",
+                    Beskrivning = "Programmera .NET",
                     Skapare = "A"
                 }
 
@@ -158,15 +150,15 @@ namespace CVgrupp2Main.DatabasLager
                 });
 
             modelBuilder.Entity<PersonProjekt>()
-                .HasOne(p => p.Projekt) 
-                .WithMany(p => p.HarMedverkat) 
-                .HasForeignKey(pm => pm.ProjektID) 
-                .OnDelete(DeleteBehavior.Restrict); 
+                .HasOne(p => p.Projekt)
+                .WithMany(p => p.HarMedverkat)
+                .HasForeignKey(pm => pm.ProjektID)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<PersonProjekt>()
                 .HasOne(p => p.Person)
                 .WithMany(p => p.HarMedverkat)
-                .HasForeignKey(pm => pm.Medverkande) 
+                .HasForeignKey(pm => pm.Medverkande)
                 .OnDelete(DeleteBehavior.Restrict);
 
 
